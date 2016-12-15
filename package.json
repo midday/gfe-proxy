@@ -1,0 +1,31 @@
+{
+  "name": "gfe-proxy",
+  "version": "0.0.1",
+  "homepage": "https://github.com/midday/gfe-proxy",
+  "main": "./index.js",
+  "bin": {
+    "gfe-proxy": "./bin/gfe-proxy"
+  },
+  "keywords": [
+    "gfe",
+    "static",
+    "proxy",
+    "mount",
+    "js",
+    "css"
+  ],
+  "author": "midday<598535774@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/midday/gfe-proxy.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^1.0.0",
+    "static-server": "^2.0.3",
+    "syncrequest": "^1.4.2",
+    "request": "^2.61.0",
+    "yargs": "^3.21.0",
+    "chalk": "^0.5.1"
+  }
+}

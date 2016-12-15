@@ -1,0 +1,70 @@
+#!/usr/bin/env node
+var fs = require('fs');
+var path = require('path');
+var yargs = require('yargs');
+var chalk = require('chalk');
+var defaults = require('../lib/defaults.js');
+var index = require('../index');
+
+var yargs = require('yargs')
+    .usage('\r\nUsage: gfe-proxy <command> [options]')
+    .command('start', 'start the gfe-proxy')
+    .command('stop', 'stop the gfe-proxy')
+    .help('h')
+    .alias('h', 'help')
+    .epilog('提醒：非 Ctrl+C 方式停止 gfe-proxy,请执行 gfe-proxy stop 命令，否则不能访问网络\r\n');
+    
+var argv = yargs.argv;
+var command = argv._[0];
+
+/**
+ * 根据输入命令执行逻辑
+ * @param  {String} 输入的命令参数
+ */
+function execCmd(command) {
+    if (command === "start") {
+        var config = getConfig();
+        index.init(config);
+        return;
+    } else if(command === "stop"){
+        index.stopProxy();
+        console.log(chalk.green.bold('  gfe-proxy 已手动关闭，快去 happy 的上网去吧!'));
+        console.log();
+        process.exit();
+        return;
+    } else{
+       yargs.showHelp();
+    }
+}
+
+execCmd(command);
+
+/**
+ * 组合配置参数。
+ * 如果根目录下没有用户配置文件，则创建；如果有，则用户配置信息和默认配置合并
+ * 注意：方法放到此处目的，保证只执行一次
+ * @return {Object} 组合后配置参数
+ */
+function getConfig(){
+    var mountBasePath = path.resolve('./').replace(/\\/g, '/');
+    var file = path.join(mountBasePath, 'gfe-proxy-config.json');
+    var config = defaults;
+    if (fs.existsSync(file)) {
+        var fileContent = fs.readFileSync(file, 'utf-8');
+
+        if (fileContent) {
+            var userConfig = JSON.parse(fileContent);
+            for (var name in userConfig) {
+                config[name] = userConfig[name];
+            }
+        }
+    } else {
+        var text = JSON.stringify(config, null, 4);
+        fs.writeFileSync(file, text, 'utf-8');
+
+        console.log(chalk.green.bold('  Gfe-proxy-config.json'),chalk.green('文件已被创建!'));
+        console.log(chalk.yellow('  提醒：请按照自己需求修改配置项，修改完后重启即可'));
+        process.exit();
+    }
+    return config;
+}
