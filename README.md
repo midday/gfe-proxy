@@ -138,9 +138,9 @@ gfeProxy.init(config);
 
     - 挂载静态资源的根目录为 css、js (需要在 groupon 目录中启动 gfe-proxy)
     ```base
-    * groupon
-        * css
-        * js
+    -groupon
+        -css
+        -js
     ```
     
 2. 进入 groupon 目录下，启动 gfe-proxy
@@ -205,15 +205,15 @@ gfeProxy.init(config);
 
 赞助方式一  
 绝对赤裸裸的金钱赞助：如果你有微信，请打开微信，使用“扫一扫”付款。  
-目前一共有9元、19元、29元、和“我是土豪”及“自定义”5档。  
+目前一共有“0.9元”、“9.9元”、“19.9元”、“29.9元”、“土豪99”5档。  
 请闭上眼随意扫一扫，祝君好运！
 
-![](http://upload-images.jianshu.io/upload_images/1270354-3170e4f10f2f0a48.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/1270354-87c140b78c596803.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ---
 赞助方式二  
 也是赤裸裸的金钱赞助：如果你有手机支付宝，请打开支付宝App，使用“扫一扫”付款。  
-目前一共有9元、19元、29元、和“我是土豪”及“自定义”5档。  
+目前一共有“0.9元”、“9.9元”、“19.9元”、“29.9元”及“土豪99”5档。  
 请闭上眼随意扫一扫，祝君好运！
 
-![](http://upload-images.jianshu.io/upload_images/1270354-29465c85fc3e1ac7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/1270354-bd2773e7a23bda02.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
