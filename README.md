@@ -116,36 +116,37 @@ gfeProxy.init(config);
 ## 示例
 1. 调试页面信息及目标需求
     - 请求地址
-```bash
-http://tuan.gome.com.cn/?intcmp=sy-1000000378-1
-```
+    ```bash
+    http://tuan.gome.com.cn/?intcmp=sy-1000000378-1
+    ```
     - 源码内容
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet"  href="//css.gomein.net.cn/??gmlib/reset/1.1.0/reset.css,gmpro/1.0.0/public/1.0.0/css/top.min.css,gmpro/1.0.0/public/1.0.0/css/foot.min.css,gmpro/1.0.0/public/1.0.0/css/aside.min.css?v=201612151835,gmpro/2.0.0/cheap/groupon/1.0.0/css/common.css,gmpro/2.0.0/cheap/groupon/1.0.0/css/index.css">
-</head>
-<body>
-    ...
-    <script src="//js.gomein.net.cn/??gmlib/jq/1.7.1/jquery.js,gmlib/cookie/1.0.0/cookie.js,gmpro/1.0.0/public/1.0.0/js/signtop.min.js,gmlib/unit/bigcode/1.0.0/bigcode.min.js,gmpro/1.0.0/public/1.0.0/js/foot.min.js,gmpro/1.0.0/public/1.0.0/js/aside.min.js?v=201612151835,gmlib/unit/g/1.0.0/g.min.js,gmlib/ui/arttemplate/2.0.4/template.min.js,gmlib/ui/arttemplate/2.0.4/template-simple.min.js,gmlib/ui/gslider/1.0.2/gslider.min.js,gmlib/unit/gtime/1.0.0/gtime.min.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/common/common.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/common/collection.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/common/recentlyBrowse.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/index/cheapIndex.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/index/cheapSolid.js"></script>
-</body>
-</html>
- ```
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet"  href="//css.gomein.net.cn/??gmlib/reset/1.1.0/reset.css,gmpro/1.0.0/public/1.0.0/css/top.min.css,gmpro/1.0.0/public/1.0.0/css/foot.min.css,gmpro/1.0.0/public/1.0.0/css/aside.min.css?v=201612151835,gmpro/2.0.0/cheap/groupon/1.0.0/css/common.css,gmpro/2.0.0/cheap/groupon/1.0.0/css/index.css">
+    </head>
+    <body>
+        ...
+        <script src="//js.gomein.net.cn/??gmlib/jq/1.7.1/jquery.js,gmlib/cookie/1.0.0/cookie.js,gmpro/1.0.0/public/1.0.0/js/signtop.min.js,gmlib/unit/bigcode/1.0.0/bigcode.min.js,gmpro/1.0.0/public/1.0.0/js/foot.min.js,gmpro/1.0.0/public/1.0.0/js/aside.min.js?v=201612151835,gmlib/unit/g/1.0.0/g.min.js,gmlib/ui/arttemplate/2.0.4/template.min.js,gmlib/ui/arttemplate/2.0.4/template-simple.min.js,gmlib/ui/gslider/1.0.2/gslider.min.js,gmlib/unit/gtime/1.0.0/gtime.min.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/common/common.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/common/collection.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/common/recentlyBrowse.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/index/cheapIndex.js,gmpro/2.0.0/cheap/groupon/1.0.0/js/index/cheapSolid.js"></script>
+    </body>
+    </html>
+    ```
+
     - 目标：将 `gmpro/2.0.0` 开头的 js/css 从 combo 串中拆分并代理到本地 Server
 
     - 挂载静态资源的根目录为 css、js (需要在 groupon 目录中启动 gfe-proxy)
-```base
-+ groupon
-    + css
-    + js
-```
+    ```base
+    * groupon
+        * css
+        * js
+    ```
     
 2. 进入 groupon 目录下，启动 gfe-proxy
-    ```bash
-        gfe-proxy start
-    ```
+```bash
+    gfe-proxy start
+```
 3. 在访问 debug 页面的 url 后追加参数  `debug=1` 
 ```bash
     http://tuan.gome.com.cn/?intcmp=sy-1000000378-1&debug=1
