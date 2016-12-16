@@ -7,9 +7,9 @@ var defaults = require('../lib/defaults.js');
 var index = require('../index');
 
 var yargs = require('yargs')
-    .usage('\r\nUsage: gfe-proxy <command> [options]')
-    .command('start', 'start the gfe-proxy')
-    .command('stop', 'stop the gfe-proxy')
+    .usage('\r\n使用: gfe-proxy <命令> [选项]')
+    .command('start', '启动 gfe-proxy')
+    .command('stop', '停止 gfe-proxy')
     .help('h')
     .alias('h', 'help')
     .epilog('提醒：非 Ctrl+C 方式停止 gfe-proxy,请执行 gfe-proxy stop 命令，否则不能访问网络\r\n');

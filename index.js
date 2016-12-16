@@ -74,13 +74,14 @@ function startStaticServer(port) {
 
     server.start(function() {
         console.log(chalk.green.bold('  gfe-proxy已成功启动！'));
+        console.log();
         console.log(chalk.blue('*'), '本地静态服务器运行地址 :', chalk.cyan.bold('http://' + server.host + ':' + server.port));
         console.log();
         console.log(chalk.red.bold('  友情提醒：'));
         console.log(chalk.blue('*'), '      1、请使用', chalk.yellow.bold('Ctrl+C'), '组合键来停止 gfe-proxy！');
         console.log(chalk.blue('*'), '      2、异常关闭 gfe-proxy 会导致不能上网，请执行 gfe-proxy stop 命令！');
         console.log(chalk.blue('*'), '      3、异常关闭指非 Ctrl+C 方式停止 gfe-proxy 外的所有场景，');
-        console.log(chalk.blue('*'), '         如：手动关闭或任务管理器结束正在运行 gfe-proxy 的命令窗口！');
+        console.log(chalk.blue('*'), '         如：手动关闭或从任务管理器直接结束正在运行 gfe-proxy 的命令窗口！');
         console.log();
     });
 }
