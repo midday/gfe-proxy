@@ -1,7 +1,7 @@
 {
   "name": "gfe-proxy",
   "description": "一款无侵入、可插拔的静态资源 (`js/css`) 代理服务器",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "https://github.com/midday/gfe-proxy",
   "main": "./index.js",
   "bin": {
