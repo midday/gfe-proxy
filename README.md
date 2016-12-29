@@ -64,7 +64,11 @@ gfeProxy.init(config);
 {
     //被调试页面的Host集合
     "debugPageHosts": ["gome.com.cn", "atguat.com.cn", "gomeprelive.com.cn"],
-
+    
+    //是否开启静态server
+    "staticServer":true,
+    //本地静态server的hostName
+    "staticServerHostname": "127.0.0.1",
     //本地静态server的端口(本地Server指挂载本地目录的 Server)
     "staticServerPort": "10000",
 
@@ -191,3 +195,29 @@ gfeProxy.init(config);
 3. 过滤到符合条件的请求后，去掉 `debug=1` 拉取原始请求内容
 4. 得到原始请求响应内容后，解析静态资源并打上本地 Server 的 Host
 5. 将修改后的内容渲染到页面上，这样就实现了线上静态资源代理
+
+## 赞助
+
+
+如果您认为本工具不错，对你开发效率和调试效率有所提高，不妨小额赞助我一下，让我有动力继续做出高质量的工具。
+
+---
+
+赞助方式一共有两种:微信支付，支付宝支付。
+
+---
+
+赞助方式一  
+绝对赤裸裸的金钱赞助：如果你有微信，请打开微信，使用“扫一扫”付款。  
+目前一共有“0.9元”、“9.9元”、“19.9元”、“29.9元”、“土豪99”5档。  
+请闭上眼随意扫一扫，祝君好运！
+
+![](http://upload-images.jianshu.io/upload_images/1270354-87c140b78c596803.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+---
+赞助方式二  
+也是赤裸裸的金钱赞助：如果你有手机支付宝，请打开支付宝App，使用“扫一扫”付款。  
+目前一共有“0.9元”、“9.9元”、“19.9元”、“29.9元”及“土豪99”5档。  
+请闭上眼随意扫一扫，祝君好运！
+
+![](http://upload-images.jianshu.io/upload_images/1270354-bd2773e7a23bda02.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
